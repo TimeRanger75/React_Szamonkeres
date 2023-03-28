@@ -1,26 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Main from './components/Main';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Experience from './components/Experience';
+import Contact from './components/Contact';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends Component<{}>{
+  render() {
+    return <div> 
+      <Header/>
+      <Routes>
+        <Route path='/' element={<Main/>}></Route>
+        <Route path='/tapasztalat' element={<Experience/>}></Route>
+        <Route path='/idopont' element={<Contact/>}></Route>
+      </Routes>
+      <Footer/>
     </div>
-  );
+  }
 }
-
 export default App;
